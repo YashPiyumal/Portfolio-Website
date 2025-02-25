@@ -17,7 +17,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(Images/Background-image3.jpg);
+    background-image: url(Images/digital-8280769.jpg);
     background-size: cover;
     background-position: center;
 
@@ -32,6 +32,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-top: 20px;
 }
 
 .logo{
@@ -408,10 +409,10 @@ nav .fa-solid{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(Images/Background-image3.jpg);
+        background-image: url(Images/digital-8280769.jpg);
     }
     .header-text{
-        margin-top: 40%;
+        margin-top: 100%;
         font-size: 16px;
     }
     .header-text h1{
@@ -474,3 +475,197 @@ nav .fa-solid{
     display: block;
 
 }
+
+/* General banner layout */
+.banner {
+    width: 100%;  /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Centering the 3D slider */
+.banner .slider {
+    position: absolute;
+    width: 100%; /* Adjusted width to fit the container */
+    height: 100%; /* Adjusted height to fit the container */
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%) rotateX(-16deg); /* Centered */
+    transform-style: preserve-3d;
+    animation: autoRun 20s linear infinite;
+    z-index: 0; /* Make sure the slider stays behind content */
+}
+
+/* Ensuring the 3D effect works smoothly */
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateX(-30deg) rotateY(0deg);
+    }
+    to {
+        transform: perspective(1000px) rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+/* Slider item positioning */
+.banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(400px); /* Apply rotation and 3D translation */
+}
+
+.banner .slider .item i.iconset {
+    font-size: 60px; /* Adjusted icon size */
+    color: #42ff17;
+}
+
+/* Hero content */
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1200px, 100vw);
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; /* Ensure content stays above the slider */
+}
+
+.banner .content h1 {
+    font-family: 'ICA Rubrik';
+    font-size: 8em;
+    line-height: 1em;
+    color: #208f0e;
+    position: relative;
+    top: 10px;
+}
+
+.banner .content h1::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #ffffff;
+    color: transparent;
+}
+
+.banner .content .author {
+    font-family: Poppins;
+    text-align: left;
+    max-width: 200px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.banner .content h2 {
+    font-size: 2em;
+    padding-left: 10px;
+    border-left: #42ff17 2px solid;
+    color: #42ff17;
+}
+
+.banner .content .model {
+    background-image: url(Images/dev.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .banner .content h1 {
+        font-size: 5em;
+    }
+
+    .banner .content h2 {
+        font-size: 1.5em;
+    }
+
+    .hireme {
+        padding: 12px 30px;
+    }
+
+    .banner .slider .item i.iconset {
+        font-size: 40px;
+    }
+
+    .banner .content {
+        padding-bottom: 60px;
+    }
+
+    .banner .content .model {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner .content h1 {
+        font-size: 3.5em;
+    }
+
+    .banner .content h2 {
+        font-size: 1.2em;
+        display: none;
+    }
+
+    .hireme {
+        padding: 10px 25px;
+        margin-top: 20px;
+    }
+
+    .banner .slider .item i.iconset {
+        font-size: 30px;
+    }
+
+    .banner .content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding-bottom: 40px;
+    }
+
+    .banner .content .model {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner .content h1 {
+        font-size: 2.5em;
+    }
+
+    .banner .content h2 {
+        font-size: 1em;
+        display: none;
+    }
+
+    .hireme {
+        padding: 8px 20px;
+        margin-top: 10px;
+    }
+
+    .banner .slider .item i.iconset {
+        font-size: 25px;
+    }
+
+    .banner .content {
+        padding: 20px 10px 30px;
+        gap: 10px;
+    }
+
+    .banner .content .model {
+        height: 30vh;
+    }
+}
+
+
+

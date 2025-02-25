@@ -24,12 +24,51 @@
                     </ul>
                     <i class="fa-solid fa-bars" onclick="openmenu()"></i>
                 </nav>
-                <div class="header-text">
-                    <p>Frontend Developer</p>
-                    <h1>Hi!, I'm Yasoda Piyumal</h1>
-                    <div class="hero-text">
-                        <span id="animated-text"></span>
+                <div class="banner">
+                    <!-- Rotating Slider -->
+                    <div class="slider" style="--quantity: 10">
+                        <div class="item" style="--position: 1">
+                            <i class="fa-solid fa-code iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 2">
+                            <i class="fa-brands fa-css3 iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 3">
+                            <i class="fa-brands fa-node-js iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 4">
+                            <i class="fa-brands fa-html5 iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 5">
+                            <i class="fa-brands fa-python iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 6">
+                            <i class="fa-brands fa-webflow iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 7">
+                            <i class="fa-brands fa-wordpress iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 8">
+                            <i class="fa-brands fa-wix iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 9">
+                            <i class="fa-brands fa-figma iconset"></i>
+                        </div>
+                        <div class="item" style="--position: 10">
+                            <i class="fa-solid fa-database iconset"></i>
+                        </div>
                     </div>
+                    
+                    <!-- Hero Content Section -->
+                    <div class="content">
+                        <h1 data-content="YASH.DESIGN">YASH.DESIGN</h1>
+                        <div class="author">
+                            <h2>Frontend Developer</h2>
+                        </div>
+                       <div class="model"></div>
+                    </div>
+                </div>
+                
                 </div>
             </div>
         </div>
@@ -289,6 +328,14 @@
             }
             
             typeEffect();
+
+            const menuIcon = document.querySelector('.fa-solid');
+const navMenu = document.querySelector('nav ul');
+
+menuIcon.addEventListener('click', () => {
+    navMenu.style.right = navMenu.style.right === '0px' ? '-200px' : '0';
+});
+
             </script>
 
 
